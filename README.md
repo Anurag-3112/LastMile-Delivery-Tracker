@@ -30,6 +30,7 @@ A full-stack logistics management platform designed to manage the complete last-
 - [Order Assignment](#order-assignment)
 - [Tracking System](#tracking-system)
 - [Authentication & Authorization](#authentication--authorization)
+- [Notifications](#Notifications)
 - [API Overview](#api-overview)
 - [Project Structure](#project-structure)
 - [Environment Variables](#environment-variables)
@@ -801,6 +802,25 @@ The backend independently validates authorization, so frontend route protection 
 
 ---
 
+# Notifications
+
+The platform uses an event-driven notification architecture.
+
+When an order status changes, the backend publishes an
+`ORDER_STATUS_CHANGED` event to RabbitMQ.
+
+```text
+Order Status Change
+        ↓
+RabbitMQ
+        ↓
+Notification Consumer
+       / \
+      /   \
+   Email   SMS
+```
+
+---
 # API Overview
 
 The application follows RESTful API principles.
