@@ -15,12 +15,6 @@ const trackingRoutes = require("./modules/tracking/tracking.routes");
 const agentRoutes = require("./modules/agents/agent.routes");
 const assignmentRoutes = require("./modules/assignment/assignment.routes");
 
-
-
-
-
-
-
 const app = express();
 
 app.use(
@@ -40,6 +34,15 @@ if (process.env.NODE_ENV !== "test") {
     app.use(morgan("dev"));
 }
 
+// Root route - useful for Render health checks
+app.get("/", (req, res) => {
+    res.status(200).json({
+        success: true,
+        message: "Last-Mile Delivery Tracker API is running",
+    });
+});
+
+// API health check
 app.get("/api/v1/health", (req, res) => {
     res.status(200).json({
         success: true,
@@ -56,6 +59,5 @@ app.use("/api/v1/orders", orderRoutes);
 app.use("/api/v1", trackingRoutes);
 app.use("/api/v1/agent", agentRoutes);
 app.use("/api/v1/admin", assignmentRoutes);
-
 
 module.exports = app;
