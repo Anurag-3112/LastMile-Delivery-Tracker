@@ -320,8 +320,8 @@ The application follows a client-server architecture.
                   │      React Client   │
                   │                     │
                   │ Customer            │
-                  │ Agent              │
-                  │ Admin              │
+                  │ Agent               │
+                  │ Admin               │
                   └──────────┬──────────┘
                              │
                         REST APIs
@@ -424,9 +424,8 @@ src/
 
 The backend is organized by business domain rather than keeping all logic in a single controller.
 
+```markdown
 Major modules include:
-
-```
 ```
 
 ```
@@ -1440,11 +1439,11 @@ The architecture separates frontend presentation, backend business logic, databa
 
 **Live Application:**
 
-[https://last-mile-delivery-tracker-lovat.vercel.app/](https://last-mile-delivery-tracker-lovat.vercel.app/?utm_source=chatgpt.com)
+[https://last-mile-delivery-tracker-lovat.vercel.app/](https://last-mile-delivery-tracker-lovat.vercel.app/)
 
 **Backend API:**
 
-[https://lastmile-delivery-tracker-do8o.onrender.com](https://lastmile-delivery-tracker-do8o.onrender.com?utm_source=chatgpt.com)
+[https://lastmile-delivery-tracker-do8o.onrender.com](https://lastmile-delivery-tracker-do8o.onrender.com)
 
 **Repository:**
 
