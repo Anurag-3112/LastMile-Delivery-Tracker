@@ -17,6 +17,46 @@ const createNotification =
         });
     };
 
+const markNotificationSent =
+    async ({
+        notificationId,
+        providerMessageId = null,
+    }) => {
+        return Notification.findByIdAndUpdate(
+            notificationId,
+            {
+                status: "SENT",
+                providerMessageId,
+                failureReason: null,
+                sentAt: new Date(),
+            },
+            {
+                new: true,
+            }
+        );
+    };
+
+const markNotificationFailed =
+    async ({
+        notificationId,
+        failureReason,
+    }) => {
+        return Notification.findByIdAndUpdate(
+            notificationId,
+            {
+                status: "FAILED",
+                failureReason:
+                    failureReason ||
+                    "Notification delivery failed",
+            },
+            {
+                new: true,
+            }
+        );
+    };
+
 module.exports = {
     createNotification,
+    markNotificationSent,
+    markNotificationFailed,
 };
