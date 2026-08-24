@@ -938,7 +938,7 @@ Use your actual environment variable names from the project rather than committi
 ## 1. Clone the repository
 
 ```
-git clone <your-repository-url>
+git clone https://github.com/Anurag-3112/LastMile-Delivery-Tracker
 cd last-mile-delivery-tracker
 ```
 
@@ -1448,7 +1448,7 @@ The architecture separates frontend presentation, backend business logic, databa
 
 **Repository:**
 
-`<ADD-GITHUB-REPOSITORY-LINK-HERE>`
+`https://github.com/Anurag-3112`
 
 **Developer:**
 
