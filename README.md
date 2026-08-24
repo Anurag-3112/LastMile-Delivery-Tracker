@@ -353,6 +353,28 @@ The application follows a client-server architecture.
                   │ Rate Cards          │
                   │ Tracking Events     │
                   └─────────────────────┘
+                             │
+                     Order Status Event
+                             │
+                             ▼
+                  ┌─────────────────────┐
+                  │      RabbitMQ       │
+                  │  lastmile.events    │
+                  └──────────┬──────────┘
+                             │
+                             ▼
+                  ┌─────────────────────┐
+                  │ Notification Worker │
+                  └─────────┬───────────┘
+                            │
+                    ┌───────┴────────┐
+                    ▼                ▼
+                 Nodemailer        Twilio
+                    │                │
+                    ▼                ▼
+                  Email             SMS
+
+
 ```
 
 ---
