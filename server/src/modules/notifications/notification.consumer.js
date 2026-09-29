@@ -170,7 +170,7 @@ const processOrderStatusEvent =
 
                 providerMessageId:
                     emailResult
-                        ?.messageId ||
+                        ?.providerMessageId ||
                     null,
             });
 
@@ -279,7 +279,7 @@ const startNotificationConsumer =
             `Notification consumer listening on ${QUEUE_NAME}`
         );
 
-        channel.consume(
+        await channel.consume(
             QUEUE_NAME,
             async (message) => {
                 if (!message) {
